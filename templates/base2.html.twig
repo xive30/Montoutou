@@ -18,7 +18,7 @@
 		{% endblock %}
 	</head>
 	<body>
-		<header class=" text-center header">
+		<header class="text-center header2">
 			<div class="title">
 				<a href="{{ path('home') }}">
 					<h1 class="maintitle">MONTOUTOU</h1>
@@ -29,20 +29,11 @@
 		<div class="row">
 			<main class="col-9"> {% block body %}{% endblock %}
             </main>
-            <aside class="aside col-3">
+            <aside class="aside2 col-3">
                 {% block aside %}
-                    {% if app.user %}
                         <div class=" m-5 text-center">
-                            <p>Bonjour,
-                                {{ app.user.firstname }}</p>
                             <a href="{{ path('app_logout') }}" class="btn btn-danger">deconnection</a>
                         </div>
-                    {% else %}
-                        <div class="m-5 text-center">
-                            <a href="{{ path('app_register') }}">S'ennregistrer</a><br><br>
-                            <a href="{{ path('app_login') }}">Se connecter</a>
-                        </div>
-                    {% endif %}
                 {% endblock %}
             </aside>
 		</div>
