@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MONTOUTOU - Mon compte{% endblock %}
+
+{% block body %}
+    <img src="{{ asset('build/images/puppies.jpg') }}" class="puppies rounded mx-auto d-block m-4"  alt="groupe de chien">
+    <h2 class="text-center">Mes animaux</h2>
+
+    {# <a href="{{ path('') }}"> #}
+        <div class="animal-card m-3 col-3">
+            <img src="{{ asset('build/images/curious-pug.jpg') }}" class="animal-img rounded-circle  d-block "  alt="groupe de chien">
+            <p class="h2">Hector</p>
+        </div>
+    {# </a> #}
+{% endblock %}

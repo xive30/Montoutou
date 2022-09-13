@@ -1,0 +1,39 @@
+@import "~bootstrap/scss/bootstrap";
+
+body, html {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    border-bottom: 0;
+
+}
+
+header {
+    background-color: #D8E0C9;
+    text-align: center;
+}
+
+.title {
+    align-self: center;
+    padding: 3rem ;
+}
+
+aside {
+    min-height: 100%;
+    background-color: #E7EBDF;
+    position: absolute;
+    right: 0;
+    }
+
+.puppies {
+    width: 400px;
+}
+
+.animal-card {
+    text-align: -webkit-center;
+}
+
+.animal-img {
+    width: 200px;
+    height: 200px;
+}

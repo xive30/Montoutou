@@ -1,19 +1,50 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link
+		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
-</html>
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+	</head>
+	<body>
+		<header>
+			<div class="title">
+				<a href="{{ path('home') }}">
+					<h1>MONTOUTOU</h1>
+				</a>
+				<p>Le carnet vaccinal de mon animal</p>
+			</div>
+		</header>
+		<div class="row">
+			<main class="col-9"> {% block body %}{% endblock %}
+            </main>
+            <aside class="col-3">
+                {% block aside %}
+                    {% if app.user %}
+                        <div class=" m-5 text-center">
+                            <p>Bonjour,
+                                {{ app.user.firstname }}</p>
+                            <a href="{{ path('app_logout') }}" class="btn btn-danger">deconnection</a>
+                        </div>
+                    {% else %}
+                        <div class="m-5 text-center">
+                            <a href="{{ path('app_register') }}">S'ennregistrer</a><br><br>
+                            <a href="{{ path('app_login') }}">Se connecter</a>
+                        </div>
+                    {% endif %}
+                {% endblock %}
+            </aside>
+		</div>
+		</body>
+	</html>
