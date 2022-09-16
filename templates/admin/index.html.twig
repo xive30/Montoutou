@@ -15,6 +15,7 @@
 			<td>Nom</td>
 			<td>Race</td>
             <td>Date de Naissance</td>
+			<td>Carnet de santé</td>
 		</tr>
 		{% for animal in animals %}
 			<tr>
@@ -22,6 +23,7 @@
 				<td>{{ animal.name }}</td>
 				<td>{{ animal.race }}</td>
                 <td>{{ animal.birthday|date('d-m-Y') }}</td>
+				<td><a href="{{ path('resume') }}">-></a></td>
 			</tr>
 		{% endfor %}
 	</table>

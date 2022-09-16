@@ -27,7 +27,7 @@
 			</div>
 		</header>
 		<div class="row">
-			<main class="col-9"> {% block body %}{% endblock %}
+			<main class="col-8 m-3"> {% block body %}{% endblock %}
             </main>
             <aside class="aside col-3">
                 {% block aside %}
@@ -35,6 +35,10 @@
                         <div class=" m-5 text-center">
                             <p>Bonjour,
                                 {{ app.user.firstname }}</p>
+								<div class="navbut m-3 p-3">
+									<a href="{{ path('account') }}">Mes Animaux</a>
+									
+								</div>
                             <a href="{{ path('app_logout') }}" class="btn btn-danger">deconnection</a>
                         </div>
                     {% else %}

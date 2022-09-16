@@ -5,15 +5,19 @@ body, html {
     padding: 0;
     top: 0;
     border-bottom: 0;
-
 }
 
-.header {
-    background-color: #D8E0C9;
+a {
+    text-decoration: none;
+    
 }
 
-.header2 {
-    background-color: #C9DFE0;
+header {
+    background-image: url("../images/clean-eyes.jpeg");
+    background-size: cover;
+    color: #FFFFFF;
+    font-weight: 800;
+    height: 300px;
 }
 
 .title {
@@ -23,7 +27,7 @@ body, html {
 
 .maintitle {
     text-decoration: none;
-    color: black;
+    color: #FFFFFF
 }
 
 aside {
@@ -40,6 +44,16 @@ aside {
     background-color: #DFEBEB;
 }
 
+.navbut {
+    background-color: rgb(169, 210, 243);
+    border-radius: 45px;
+    box-shadow: 5px 5px 15px black;
+}
+.navbut a {
+    color: #000;
+    text-decoration: none;
+}
+
 .prez {
     font-size: larger;
 }
@@ -48,7 +62,10 @@ aside {
 }
 
 .animal-card {
-    text-align: -webkit-center;
+    text-align: -webkit-center; 
+    box-shadow: 10px 10px 10px gainsboro;
+    border-radius: 20px;
+    padding: 1em;
 }
 
 .animal-img {
@@ -68,4 +85,11 @@ aside {
     font-size: xx-large;
     border-radius: 50%;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.container {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black; 
+    border-radius: 5px;
 }

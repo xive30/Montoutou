@@ -1,0 +1,145 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}MONTOUTOU - Bilan de Santé
+{% endblock %}
+
+{% block body %}
+	<h2 class="m-5">Bilan de santé</h2>
+	<div class="container">
+		{{ form_start(form) }}
+		<div class="row">
+            <div class="col-6">
+				<img src="{{ asset('build/images/curious-pug.jpg') }}" class="animal-img rounded-circle  d-block " alt="groupe de chien">
+			</div>
+			<div class="col-4 float-end">
+				<div class="h3">Résumé</div>
+				<p>Nom : hector
+				</p>
+				<p>date : {{ currentDate }}</p>
+				{{ form_row(form.poids , {'attr':{'class':'text-center form-control'} })}}
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				{{ form_row(form.examunGeneral , {'attr':{'class':'text-center form-control'} })}}
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div>
+				<h2>Vaccination</h2>
+				<div class="row">
+					<div class="col-3">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="maladieDeCarre">
+							<label class="form-check-label" for="maladieDeCarre">
+								Maladie de Carre
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="Parvovirose">
+							<label class="form-check-label" for="Parvovirose">
+								Parvovirose
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="Hepatite">
+							<label class="form-check-label" for="Hepatite">
+								Hepatite
+							</label>
+						</div>
+					</div>
+
+					<div class="col-3">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="Parainfluenza">
+							<label class="form-check-label" for="Parainfluenza">
+								Parainfluenza
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="Lepospirose">
+							<label class="form-check-label" for="Lepospirose">
+								Lepospirose
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="Rage">
+							<label class="form-check-label" for="Rage">
+								Rage
+							</label>
+						</div>
+					</div>
+
+					<div class="col-3">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="Piroplasmose">
+							<label class="form-check-label" for="Piroplasmose">
+								Piroplasmose
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="maladieDeLyme">
+							<label class="form-check-label" for="maladieDeLyme">
+								Maladie de Lyme
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="TouxDeChenil">
+							<label class="form-check-label" for="TouxDeChenil">
+								Toux de chenil
+							</label>
+						</div>
+					</div>
+
+					<div class="col-3">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="autre">
+							<label class="form-check-label" for="autre">
+								Autre ...
+							</label>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+			<div class="col-9">
+				{{ form_row(form.vaccinCommentaire , {'attr':{'class':'text-center form-control'} })}}
+			</div>
+			<div class="col-3">
+				{{ form_row(form.vaccinLot , {'attr':{'class':'text-center form-control'} })}}
+				{{ form_row(form.vaccinExp , {'attr':{'class':'text-center'} })}}
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		{{ form_row(form.antiParasitaire , {'attr':{'class':'text-center form-control-lg'} })}}
+	</div>
+	<div class="container">
+		{{ form_row(form.commentaire , {'attr':{'class':'text-center form-control-lg'} })}}
+		<p>Prochain Rendez vous prévu pour le : <span class="bolder">{{ tomorowDate }}</span></p>
+	</div>
+	<div class="d-grid gap-2 mx-auto">
+		{{ form_row(form.submit)}}
+	</div>
+	{{ form_end(form) }}
+	{# 
+					    <div class="container">
+					        <h2>Traitement antiParasitaire</h2>
+					        <span>Puces</span>
+					        <span>Tiques</span>
+					        <span>Morpions</span>
+					        <span>vers ronds (Ascaris...)</span>
+					        <span>vers plats (Ténias...)</span>
+					        <span>Vers du Coeur (Dilofilariose...)</span>
+					    </div> #}
+
+
+{% endblock %}
